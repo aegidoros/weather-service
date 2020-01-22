@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dfa95df9-3ec8-4014-b744-46d2967d7d14" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="/opt/apache-maven-3.3.9" />
+        <option name="userSettingsFile" value="/opt/apache-maven-3.3.9/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1WG2HYm5g9O8K76UsVRwDoOrHyD" />
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>GSPGrailsGroovy</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GrailsGroovy</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Kotlin</id>
+          </State>
+          <State>
+            <id>Maven</id>
+          </State>
+          <State>
+            <id>Numeric issuesJava</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="training.weather.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.WeatherApplication">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WeatherControllerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="weather-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="training.weather.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="training.weather.controller" />
+      <option name="MAIN_CLASS_NAME" value="training.weather.controller.WeatherControllerIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WeatherApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="weather-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="training.weather.WeatherApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.WeatherControllerIntegrationTest" />
+      <item itemvalue="Spring Boot.WeatherApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.WeatherControllerIntegrationTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dfa95df9-3ec8-4014-b744-46d2967d7d14" name="Default Changelist" comment="" />
+      <created>1578761523209</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578761523209</updated>
+      <workItem from="1578761530682" duration="11344000" />
+      <workItem from="1578786868384" duration="8852000" />
+      <workItem from="1578795770627" duration="6790000" />
+      <workItem from="1579640485577" duration="439000" />
+      <workItem from="1579641493613" duration="30000" />
+      <workItem from="1579641974204" duration="6436000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="WeatherControllerIntegrationTest - 2020.01.12 at 03h 13m 40s.xml">
+      <configuration name="WeatherControllerIntegrationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeatherControllerIntegrationTest - 2020.01.12 at 03h 20m 55s.xml">
+      <configuration name="WeatherControllerIntegrationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeatherControllerIntegrationTest - 2020.01.12 at 09h 35m 43s.xml">
+      <configuration name="WeatherControllerIntegrationTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2134" y="265" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1578777868734">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2134" y="265" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1578777868734" />
+    <state x="2045" y="413" width="561" height="290" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1578762413655">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2045" y="413" width="561" height="290" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1578762413655" />
+    <state x="2074" y="129" width="482" height="846" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578762324274">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2074" y="129" width="482" height="846" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1578762324274" />
+    <state x="466" y="141" width="424" height="484" key="FileChooserDialogImpl" timestamp="1578779596586">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="466" y="141" width="424" height="484" key="FileChooserDialogImpl/1366.0.1920.1080/0.27.1366.741@0.27.1366.741" timestamp="1578779596586" />
+    <state width="1874" height="248" key="GridCell.Tab.0.bottom" timestamp="1579648411727">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="248" key="GridCell.Tab.0.bottom/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1579648411727" />
+    <state width="1874" height="248" key="GridCell.Tab.0.center" timestamp="1579648411727">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="248" key="GridCell.Tab.0.center/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1579648411727" />
+    <state width="1874" height="248" key="GridCell.Tab.0.left" timestamp="1579648411727">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="248" key="GridCell.Tab.0.left/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1579648411727" />
+    <state width="1874" height="248" key="GridCell.Tab.0.right" timestamp="1579648411727">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="248" key="GridCell.Tab.0.right/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1579648411727" />
+    <state width="1874" height="248" key="GridCell.Tab.1.bottom" timestamp="1579648411727">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="248" key="GridCell.Tab.1.bottom/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1579648411727" />
+    <state width="1874" height="248" key="GridCell.Tab.1.center" timestamp="1579648411727">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="248" key="GridCell.Tab.1.center/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1579648411727" />
+    <state width="1874" height="248" key="GridCell.Tab.1.left" timestamp="1579648411727">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="248" key="GridCell.Tab.1.left/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1579648411727" />
+    <state width="1874" height="248" key="GridCell.Tab.1.right" timestamp="1579648411727">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="248" key="GridCell.Tab.1.right/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1579648411727" />
+    <state width="1874" height="248" key="GridCell.Tab.2.bottom" timestamp="1579648411728">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="248" key="GridCell.Tab.2.bottom/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1579648411728" />
+    <state width="1874" height="248" key="GridCell.Tab.2.center" timestamp="1579648411727">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="248" key="GridCell.Tab.2.center/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1579648411727" />
+    <state width="1874" height="248" key="GridCell.Tab.2.left" timestamp="1579648411727">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="248" key="GridCell.Tab.2.left/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1579648411727" />
+    <state width="1874" height="248" key="GridCell.Tab.2.right" timestamp="1579648411727">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="248" key="GridCell.Tab.2.right/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1579648411727" />
+    <state x="1670" y="27" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1578784013918">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="216" y="41" width="924" height="684" key="Maven.ArtifactSearchDialog/1366.0.1920.1080/0.27.1366.741@0.27.1366.741" timestamp="1578779640635" />
+    <state x="1670" y="27" key="Maven.ArtifactSearchDialog/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1578784013918" />
+    <state x="1815" y="187" key="SettingsEditor" timestamp="1578786782721">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="172" y="18" key="SettingsEditor/1366.0.1920.1080/0.27.1366.741@0.27.1366.741" timestamp="1578779602392" />
+    <state x="1815" y="187" key="SettingsEditor/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1578786782721" />
+    <state width="960" height="527" key="XDebugger.FullValuePopup" timestamp="1578785850598">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="960" height="527" key="XDebugger.FullValuePopup/1366.0.1920.1080/0.27.1366.741@1366.0.1920.1080" timestamp="1578785850598" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).format(inputDate)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>consolidatedWeather.getApplicableDate()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>consolidatedWeather.getWeatherStateName()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).format(inputDate).equals(consolidatedWeather.getWeatherStateName())</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+</project>
