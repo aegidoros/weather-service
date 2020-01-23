@@ -19,61 +19,52 @@ import java.util.Optional;
 @Service
 public class WeatherServiceImpl implements IWeatherService {
 
-  private final MetAWeatherFeignClient metAWeatherService;
+    private final MetAWeatherFeignClient metAWeatherService;
 
-  public WeatherServiceImpl(MetAWeatherFeignClient feignClient) {
-    this.metAWeatherService = feignClient;
-  }
-
-  @Override
-  public ResponseEntity<String> getCityWeather(String city, Optional<LocalDateTime> dateTime) {
-    if (dateTime.isPresent() && isWithinFiveDays(dateTime.get())) {
-      return getWeatherState(city, dateTime.get());
-    } else if (!dateTime.isPresent()) {
-      return getWeatherState(city, LocalDateTime.now());
-    } else {
-      String cityWeather = "Date not yet available";
-      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(cityWeather);
+    public WeatherServiceImpl(MetAWeatherFeignClient feignClient) {
+        this.metAWeatherService = feignClient;
     }
-  }
 
-  private ResponseEntity<String> getWeatherState(String city, LocalDateTime dateTime) {
-    Optional<String> weatherState = Optional.empty();
-    HttpStatus httpStatus = HttpStatus.OK;
-    List<Location> locations = metAWeatherService.getLocation(city);
-    if (!locations.isEmpty()) {
-      Integer woeid = locations.stream().findFirst().get().getWoeid();
-      LocationInfo locationInfo = metAWeatherService.getLocationInfo(woeid);
-      for (ConsolidatedWeather consolidatedWeather : locationInfo.getConsolidatedWeatherList()) {
-        if (matchApplicableDate(dateTime.toLocalDate(), consolidatedWeather.getApplicableDate())) {
-          weatherState = Optional.of(consolidatedWeather.getWeatherStateName());
-          break;
+    @Override
+    public ResponseEntity<String> getCityWeather(String city, Optional<LocalDateTime> dateTime) {
+        if (dateTime.isPresent() && isWithinFiveDays(dateTime.get())) {
+            return getWeatherState(city, dateTime.get());
+        } else if (!dateTime.isPresent()) {
+            return getWeatherState(city, LocalDateTime.now());
+        } else {
+            String cityWeather = "Date not yet available";
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(cityWeather);
         }
-      }
-      if (!weatherState.isPresent()) {
-        httpStatus = (HttpStatus.BAD_REQUEST);
-        weatherState = Optional.of("Date not longer available");
-      }
-
-    } else {
-      weatherState = Optional.of("Location not valid");
-      httpStatus = (HttpStatus.BAD_REQUEST);
     }
-    return ResponseEntity.status(httpStatus).body(weatherState.get());
-  }
 
-  private boolean isWithinFiveDays(LocalDateTime dateTime) {
+    private ResponseEntity<String> getWeatherState(String city, LocalDateTime dateTime) {
+        Optional<String> weatherState = Optional.empty();
+        HttpStatus httpStatus = HttpStatus.OK;
+        List<Location> locations = metAWeatherService.getLocation(city);
+        if (!locations.isEmpty()) {
+            Integer woeid = locations.stream().findFirst().get().getWoeid();
+            LocationInfo locationInfo = metAWeatherService.getLocationInfo(woeid);
+            for (ConsolidatedWeather consolidatedWeather : locationInfo.getConsolidatedWeatherList()) {
+                if (dateTime.toLocalDate().equals(consolidatedWeather.getApplicableDate())) {
+                    weatherState = Optional.of(consolidatedWeather.getWeatherStateName());
+                    break;
+                }
+            }
+            if (!weatherState.isPresent()) {
+                httpStatus = (HttpStatus.BAD_REQUEST);
+                weatherState = Optional.of("Date not longer available");
+            }
 
-    Date date = convertToDateViaInstant(dateTime);
+        } else {
+            weatherState = Optional.of("Location not valid");
+            httpStatus = (HttpStatus.BAD_REQUEST);
+        }
+        return ResponseEntity.status(httpStatus).body(weatherState.get());
+    }
 
-    return date.before(new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 6)));
-  }
+    private boolean isWithinFiveDays(LocalDateTime dateTime) {
+        Date date = java.util.Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant());
+        return date.before(new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 6)));
+    }
 
-  private boolean matchApplicableDate(LocalDate inputDate, LocalDate outputDate) {
-    return inputDate.equals(outputDate);
-  }
-
-  private Date convertToDateViaInstant(LocalDateTime dateToConvert) {
-    return java.util.Date.from(dateToConvert.atZone(ZoneId.systemDefault()).toInstant());
-  }
 }
