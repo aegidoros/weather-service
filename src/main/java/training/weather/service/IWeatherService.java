@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface IWeatherService {
 
-  ResponseEntity<String> getCityWeather(String city, Optional<LocalDateTime> date);
+    ResponseEntity<String> getCityWeather(String city, Optional<LocalDateTime> date);
 }

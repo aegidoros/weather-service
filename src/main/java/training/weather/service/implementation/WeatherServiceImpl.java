@@ -9,7 +9,6 @@ import training.weather.bo.LocationInfo;
 import training.weather.service.IWeatherService;
 import training.weather.service.feign.MetAWeatherFeignClient;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
@@ -27,19 +26,25 @@ public class WeatherServiceImpl implements IWeatherService {
 
     @Override
     public ResponseEntity<String> getCityWeather(String city, Optional<LocalDateTime> dateTime) {
+        Optional<String> cityWeather;
+        HttpStatus httpStatus = HttpStatus.OK;
         if (dateTime.isPresent() && isWithinFiveDays(dateTime.get())) {
-            return getWeatherState(city, dateTime.get());
+            cityWeather = getWeatherState(city, dateTime.get());
         } else if (!dateTime.isPresent()) {
-            return getWeatherState(city, LocalDateTime.now());
+            cityWeather = getWeatherState(city, LocalDateTime.now());
         } else {
-            String cityWeather = "Date not yet available";
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(cityWeather);
+            cityWeather = Optional.of("Date not valid");
+            httpStatus = HttpStatus.BAD_REQUEST;
         }
+        if (!cityWeather.isPresent()) {
+            httpStatus = HttpStatus.BAD_REQUEST;
+            cityWeather = Optional.of("Location not valid");
+        }
+        return ResponseEntity.status(httpStatus).body(cityWeather.get());
     }
 
-    private ResponseEntity<String> getWeatherState(String city, LocalDateTime dateTime) {
+    private Optional<String> getWeatherState(String city, LocalDateTime dateTime) {
         Optional<String> weatherState = Optional.empty();
-        HttpStatus httpStatus = HttpStatus.OK;
         List<Location> locations = metAWeatherService.getLocation(city);
         if (!locations.isEmpty()) {
             Integer woeid = locations.stream().findFirst().get().getWoeid();
@@ -50,21 +55,14 @@ public class WeatherServiceImpl implements IWeatherService {
                     break;
                 }
             }
-            if (!weatherState.isPresent()) {
-                httpStatus = (HttpStatus.BAD_REQUEST);
-                weatherState = Optional.of("Date not longer available");
-            }
-
-        } else {
-            weatherState = Optional.of("Location not valid");
-            httpStatus = (HttpStatus.BAD_REQUEST);
         }
-        return ResponseEntity.status(httpStatus).body(weatherState.get());
+        return weatherState;
     }
 
     private boolean isWithinFiveDays(LocalDateTime dateTime) {
         Date date = java.util.Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant());
-        return date.before(new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 6)));
+        Date dateFrom = java.util.Date.from(LocalDateTime.now().minusDays(1).atZone(ZoneId.systemDefault()).toInstant());
+        return date.after(dateFrom) && date.before(new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 6)));
     }
 
 }

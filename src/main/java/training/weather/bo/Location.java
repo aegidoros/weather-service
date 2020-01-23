@@ -6,14 +6,14 @@ import lombok.Data;
 @Data
 public class Location {
 
-  private String title;
+    private String title;
 
-  @JsonProperty(value = "location_type")
-  private String locationType;
+    @JsonProperty(value = "location_type")
+    private String locationType;
 
-  @JsonProperty(value = "latt_long")
-  private String lattLong;
+    @JsonProperty(value = "latt_long")
+    private String lattLong;
 
-  private Integer woeid;
-  private Integer distance;
+    private Integer woeid;
+    private Integer distance;
 }

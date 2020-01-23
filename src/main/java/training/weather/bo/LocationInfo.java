@@ -8,6 +8,6 @@ import java.util.List;
 @Data
 public class LocationInfo {
 
-  @JsonProperty(value = "consolidated_weather")
-  private List<ConsolidatedWeather> consolidatedWeatherList;
+    @JsonProperty(value = "consolidated_weather")
+    private List<ConsolidatedWeather> consolidatedWeatherList;
 }
