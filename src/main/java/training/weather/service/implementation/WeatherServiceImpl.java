@@ -46,8 +46,9 @@ public class WeatherServiceImpl implements IWeatherService {
     private Optional<String> getWeatherState(String city, LocalDateTime dateTime) {
         Optional<String> weatherState = Optional.empty();
         List<Location> locations = metAWeatherService.getLocation(city);
-        if (!locations.isEmpty()) {
-            Integer woeid = locations.stream().findFirst().get().getWoeid();
+        Optional<Location> location = getFirstLocation(locations);
+        if (location.isPresent()) {
+            Integer woeid = location.get().getWoeid();
             LocationInfo locationInfo = metAWeatherService.getLocationInfo(woeid);
             for (ConsolidatedWeather consolidatedWeather : locationInfo.getConsolidatedWeatherList()) {
                 if (dateTime.toLocalDate().equals(consolidatedWeather.getApplicableDate())) {
@@ -59,10 +60,18 @@ public class WeatherServiceImpl implements IWeatherService {
         return weatherState;
     }
 
+    private Optional<Location> getFirstLocation(List<Location> locations) {
+        Optional<Location> location = Optional.empty();
+        if (!locations.isEmpty()) {
+            location = locations.stream().findFirst();
+        }
+        return location;
+    }
+
     private boolean isWithinFiveDays(LocalDateTime dateTime) {
-        Date date = java.util.Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant());
-        Date dateFrom = java.util.Date.from(LocalDateTime.now().minusDays(1).atZone(ZoneId.systemDefault()).toInstant());
-        return date.after(dateFrom) && date.before(new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 6)));
+        Date date = Date.from(dateTime.atZone(ZoneId.systemDefault()).toInstant());
+        Date dateFrom = Date.from(LocalDateTime.now().minusDays(1).atZone(ZoneId.systemDefault()).toInstant());
+        return date.after(dateFrom) && date.before(Date.from(LocalDateTime.now().plusDays(5).atZone(ZoneId.systemDefault()).toInstant()));
     }
 
 }
