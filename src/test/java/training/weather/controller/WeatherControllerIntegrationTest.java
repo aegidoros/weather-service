@@ -1,4 +1,4 @@
-/*
+
 package training.weather.controller;
 
 import org.junit.Test;
@@ -11,8 +11,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import training.weather.service.IWeatherService;
 
-import java.time.LocalDateTime;
-
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
@@ -20,21 +18,22 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest
+@WebMvcTest(WeatherController.class)
 public class WeatherControllerIntegrationTest {
-  @Autowired private MockMvc mvc;
-  @MockBean private IWeatherService weatherService;
+    @Autowired
+    private MockMvc mvc;
+    @MockBean
+    private IWeatherService weatherService;
 
-  @Test
-  public void getCityWeather_Successful() throws Exception {
-    given(weatherService.getCityWeather(anyString(), any(Optional<LocalDateTime>)))
-        .willReturn(ResponseEntity.ok("\"Showers\""));
+    @Test
+    public void getCityWeather_Successful() throws Exception {
+        given(weatherService.getCityWeather(anyString(), any()))
+                .willReturn(ResponseEntity.ok("\"Showers\""));
 
-    mvc.perform(
-            get("/api/training/weather")
-                .param("city", "london")
-                .param("date", "2020-01-12T00:30:00"))
-        .andExpect(status().isOk());
-  }
+        mvc.perform(
+                get("/api/training/weather")
+                        .param("city", "london").param("date", "2020-01-12T00:30:00"))
+                .andExpect(status().isOk());
+    }
 }
-*/
+
