@@ -15,6 +15,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -28,12 +29,12 @@ public class WeatherControllerIntegrationTest {
     @Test
     public void getCityWeather_Successful() throws Exception {
         given(weatherService.getCityWeather(anyString(), any()))
-                .willReturn(ResponseEntity.ok("\"Showers\""));
+                .willReturn(ResponseEntity.ok("Showers"));
 
         mvc.perform(
                 get("/api/training/weather")
                         .param("city", "london").param("date", "2020-01-12T00:30:00"))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk()).andExpect(content().string("Showers"));
     }
 }
 
